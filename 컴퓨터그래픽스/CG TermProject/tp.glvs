@@ -1,0 +1,20 @@
+#version 330 core 
+layout (location = 0) in vec3 vPos;  
+layout (location = 1) in vec3 vNormal; 
+
+out vec3 FragPos;  //---객체의위치값을프래그먼트세이더로보낸다. 
+out vec3 Normal; //---노멀값을프래그먼트세이더로보낸다.
+
+uniform mat4 modelTransform; // ---변환행렬: uniform으로선언하여응용프로그램에서값을저장한다.
+uniform mat4 viewTransform;
+uniform mat4 projectionTransform;
+
+void main()
+{
+    FragPos = vec3(modelTransform * vec4(vPos, 1.0));
+	gl_Position = projectionTransform * viewTransform * modelTransform * vec4 (vPos, 1.0f); 
+	
+	Normal = normalize((modelTransform *  vec4(vNormal, 1.0f)).xyz); //---노멀값을정규화하고, 프래그먼트세이더로보낸다.
+
+
+} 

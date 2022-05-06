@@ -1,0 +1,20 @@
+#version 330 core 
+layout (location = 0) in vec3 vPos;   // 위치변수: attribute position 0 
+layout (location = 1) in vec3 vColor; // 컬러변수: attribute position 1
+layout (location = 2) in vec2 vTexCoord; //---텍스처좌표
+
+out vec3 outColor;
+out vec2 TexCoord;
+
+
+uniform mat4 modelTransform; // ---변환행렬: uniform으로선언하여응용프로그램에서값을저장한다.
+uniform mat4 viewTransform;
+uniform mat4 projectionTransform;
+
+
+void main()
+{
+	gl_Position = projectionTransform * viewTransform * modelTransform * vec4 (vPos, 1.0f); //---객체의좌표에변환행렬을적용한다.
+	outColor = vColor; // vertex data로부터가져온컬러입력을outColor에설정
+	TexCoord = vec2(vTexCoord.x, vTexCoord.y);
+} 

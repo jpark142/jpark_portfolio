@@ -1,0 +1,39 @@
+#version 330 core 
+
+in vec3 FragPos; //---위치값 
+in vec3 Normal; //---버텍스세이더에서받은노멀값 
+out vec4 FragColor; //---최종객체의색저장
+
+
+uniform vec3 lightPos; //---조명의위치 
+uniform vec3 lightColor; //---조명의색 
+uniform vec3 objectColor; //---객체의색 
+uniform vec3 viewPos; //관찰자의 위치
+
+
+void main() 
+{
+    // ambient
+    float ambientLight = 0.3; //---전역조명세기 
+	vec3 ambient = ambientLight * lightColor; //---전역조명값
+
+	vec3 normalVector = Normal; //---표면과조명의위치로조명의방향을결정한다. 
+	vec3 lightDir = normalize(lightPos - FragPos); 
+	float diffuseLight = max(dot(normalVector, lightDir), 0.0); //--- N과L의내적값으로강도조절(음의값을가질수없게한다.)
+	vec3 diffuse = diffuseLight * lightColor; //---산란반사조명값=산란반사값*조명색상값
+	
+	int shininess = 32;
+	
+	vec3 viewDir = normalize(FragPos - viewPos); // ViewPos: 관찰자의위치값, FragPos: 객체의위치값 
+	vec3 reflectDir = reflect(-lightDir, normalVector); // reflect 함수: 입사벡터의반사방향계산
+	float specularColor = max(dot(viewDir, reflectDir), 0.0); // 거울반사값설정: 음수방지
+	specularColor = pow(specularColor, shininess); // shininess 승을해주어하이라이트를만들어준다.
+	vec3 specular = specularColor * lightColor; // 거울반사조명의색을결정 
+	
+	vec3 result = (ambient + diffuse + specular) * objectColor; //---최종산란반사조명값=전역조명+산란반사조명
+	
+
+	FragColor = vec4(result, 1.0); 
+	
+
+}
