@@ -872,11 +872,9 @@ int main(int argc, char** argv) // 윈도우 출력하고 콜백함수 설정
 	glGenBuffers(1, cube_vbo);
 
 	glBindVertexArray(cube_vao[0]);
-	//조명
+
 	glBindBuffer(GL_ARRAY_BUFFER, cube_vbo[0]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(tank_body_vertex_normal), tank_body_vertex_normal, GL_STATIC_DRAW);
-
-
 	//---위치속성
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
@@ -890,7 +888,7 @@ int main(int argc, char** argv) // 윈도우 출력하고 콜백함수 설정
 	glGenBuffers(3, obs_vbo);
 
 	glBindVertexArray(obs_vao[0]);
-	//조명
+
 	glBindBuffer(GL_ARRAY_BUFFER, obs_vbo[0]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(obs1_vertex_normal), obs1_vertex_normal, GL_STATIC_DRAW);
 
@@ -903,7 +901,7 @@ int main(int argc, char** argv) // 윈도우 출력하고 콜백함수 설정
 
 	//Open & Close Obstacle
 	glBindVertexArray(obs_vao[1]);
-	//조명
+
 	glBindBuffer(GL_ARRAY_BUFFER, obs_vbo[1]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(obs1_vertex_normal), obs1_vertex_normal, GL_STATIC_DRAW);
 
@@ -914,9 +912,8 @@ int main(int argc, char** argv) // 윈도우 출력하고 콜백함수 설정
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
 
-	//
 	glBindVertexArray(obs_vao[2]);
-	//조명
+
 	glBindBuffer(GL_ARRAY_BUFFER, obs_vbo[2]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(obs1_vertex_normal), obs1_vertex_normal, GL_STATIC_DRAW);
 
@@ -926,9 +923,6 @@ int main(int argc, char** argv) // 윈도우 출력하고 콜백함수 설정
 	//---노말속성
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
 	glEnableVertexAttribArray(1);
-
-
-
 
 
 	//나무
@@ -1294,10 +1288,12 @@ int drawNum(int num, int offset, float scale)
 	int nextval = num / 10;
 	int id = num % 10;
 
-	if (nextval)
+	if (nextval) {
 		offset = drawNum(num / 10, offset, scale);
+		//cout << offset << endl;
+	}
 
-	static int asdf{ 0 };
+	//static int asdf{ 0 };
 	int uiCharIDuniform = glGetUniformLocation(shaderprogram_ui, "uiCharid"); 
 	int uioffsetuniform = glGetUniformLocation(shaderprogram_ui, "offset"); 
 	glUniform1i(uiCharIDuniform, id);
@@ -1331,7 +1327,6 @@ GLvoid drawScene() // 콜백 함수: 출력
 
 
 		if (d == third_p_view) {
-			//공용 카메라------------------------
 			glm::vec3 cameraPos = glm::vec3(0.0f, c_pos_y, 7.0f);
 			glm::vec3 cameraDirection = glm::vec3(0.0f, 0.0f, 0.0f);
 			glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
@@ -1364,7 +1359,6 @@ GLvoid drawScene() // 콜백 함수: 출력
 				unsigned int viewLocation = glGetUniformLocation(shaderprogram, "viewTransform");
 				glUniformMatrix4fv(viewLocation, 1, GL_FALSE, &view[0][0]);
 			}
-
 		}
 
 		//공용 투영
@@ -1440,8 +1434,6 @@ GLvoid drawScene() // 콜백 함수: 출력
 		else {
 			player_move = player_trans * player_first_state * player_rotate_y;
 		}
-
-
 		unsigned int modelLocation2 = glGetUniformLocation(shaderprogram, "modelTransform");
 		glUniformMatrix4fv(modelLocation2, 1, GL_FALSE, glm::value_ptr(player_move));
 
@@ -1499,18 +1491,16 @@ GLvoid drawScene() // 콜백 함수: 출력
 
 		glClear(GL_DEPTH_BUFFER_BIT);
 
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glEnable(GL_BLEND); //블렌딩 기능 활성화
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); //알파 블렌디 효과
 
 		glUseProgram(shaderprogram_ui);
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, texture1);
 
-		
 		testnum++;
 		drawInt(life, -1, 1, 0.1f);
-		//drawInt(1203, 0, 0, 0.1f, 0.2f, 0.98f, 0.68f);
 		drawInt(testnum / 10, 0.7, 0.7, 0.05f, 1 * (testnum / 1000.f), 1 * (1 - testnum / 1000.f), 0.1f);
 		//if (testnum > 1000)testnum = 0;
 	}
