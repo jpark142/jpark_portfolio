@@ -233,7 +233,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -249,7 +249,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -266,7 +266,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -281,7 +281,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -297,7 +297,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -312,7 +312,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -329,7 +329,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -344,7 +344,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -360,7 +360,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -375,7 +375,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -392,7 +392,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -407,7 +407,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -425,7 +425,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=str(telname)
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -440,7 +440,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -457,7 +457,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -472,7 +472,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -488,7 +488,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -503,7 +503,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -520,7 +520,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -535,7 +535,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -554,7 +554,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=str(telname)
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -569,7 +569,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -586,7 +586,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -601,7 +601,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -618,7 +618,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -633,7 +633,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -650,7 +650,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -665,7 +665,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
@@ -682,7 +682,7 @@ class Main(QMainWindow, Ui_MainWindow):
                 telname=i.find("telname").string
                 mainimage=i.find("mainimage")
                 mainimage=str(mainimage)
-                if len(mainimage) is not 4:
+                if len(mainimage) != 4:
                     mainimage=mainimage[11:]
                     mainimage=mainimage[:-12]
 
@@ -697,7 +697,7 @@ class Main(QMainWindow, Ui_MainWindow):
                     self.plainTextEdit_3.appendPlainText("-----------------------------------")
                     self.plainTextEdit_3.appendPlainText("\n")
                     self.comboBox_2.currentIndexChanged.connect(self.clearInfo)
-                    if len(mainimage) is not 4:
+                    if len(mainimage) != 4:
                         req.urlretrieve(mainimage,'../TermProject/resource/image.jpg')
                         self.label_5.setPixmap(QPixmap('../TermProject/resource/image.jpg').scaled(341,281,Qt.KeepAspectRatio, Qt.FastTransformation))
                     else:
