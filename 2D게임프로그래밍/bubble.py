@@ -60,11 +60,10 @@ class Bubble2:
         return self.updated_x - 20, self.updated_y - 20, self.updated_x + 20, self.updated_y + 20
 
 
-
- # 물방울과 플레이어 충돌
+# 물방울과 플레이어 충돌
 # 만약에 is_bubble_hit == True 이면 idle->in_bubble, run->in_bubble
 def is_bubble_hit_green(green, bubble2):
-        # if 맞았으면 return True 안맞았으면 return False
+    # if 맞았으면 return True 안맞았으면 return False
     left_p1, bottom_p1, right_p1, top_p1 = green.get_bb_green()  # player1의 바운딩박스
     left_b2, bottom_b2, right_b2, top_b2 = bubble2.get_bb_b2()  # player2의 물방울 바운딩박스
 

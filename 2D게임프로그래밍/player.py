@@ -215,7 +215,6 @@ class IdleState:
 class RunState:
     @staticmethod
     def enter_p1(green, event):
-
         green.isShot = False
         green.is_in_bubble = False
 
@@ -404,7 +403,6 @@ class RunState:
 
 
 class InBubbleState:
-
     @staticmethod
     def enter_p1(green, event):
         # 플레이어1
@@ -1171,7 +1169,6 @@ class Green:
     def add_event(self, event):
         self.event_que.insert(0, event)
 
-
     def update(self):
         self.ingametimer -= 1/1000
         self.cur_state.do_p1(self)
@@ -1182,7 +1179,6 @@ class Green:
             self.cur_state.enter_p1(self, event)
 
     def draw(self):
-
         if self.defeat is False and self.win is False and self.isShot is False:
             self.image.clip_draw(int(self.frame1) * 60, self.sheet_line, 60, 60, self.x, self.y)
         self.cur_state.draw_p1(self)

@@ -23,7 +23,6 @@ def exit():
     del bgm_title
 
 
-
 def handle_events():
     events = get_events()
     for event in events:
